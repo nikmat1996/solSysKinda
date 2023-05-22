@@ -17,7 +17,7 @@ body {
     display: grid;
     place-items: center;
     position: relative;
-    animation: Rotation var(--speed) linear 0s infinite  ;
+    animation: Rotation var(--speed) linear 3s infinite  ;
     
   }
   .parent:hover{
@@ -33,21 +33,21 @@ body {
     }
   }
   
-  
   .child{
     width: 5rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: rgb(94, 188, 188);
     display: grid;
     place-items: center;
     position: absolute;
     
   }
   .child__p {
-    animation: Rotation var(--speed) linear 0s infinite reverse ;
-  
+    animation: Rotation var(--speed) linear 3s infinite reverse ;
+    cursor: pointer;
   }
+
+  
   
   .child:nth-child(1){
     transform: translate(calc(var(--radius) * cos((360deg * 1)/10)), calc(var(--radius) * sin((360deg * 1)/10)));
@@ -89,3 +89,32 @@ body {
     transform: translate(calc(var(--radius) * cos((360deg * 10)/10)), calc(var(--radius) * sin((360deg * 10)/10)));
   }
   
+
+  .throb{
+    width: 5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    background-color: rgb(94, 188, 188);
+    place-items: center;
+    cursor: pointer;
+    animation: throb 2s linear 0s infinite alternate;
+  }
+
+  @keyframes throb {
+    100% {
+        transform: scale(1.2);
+    }
+  }
+
+  .throb:hover{
+    animation-play-state: paused;
+  }
+
+  .child:nth-child(2n) > .throb{
+    animation-delay: -1s;
+  }
+
+  .child:nth-child(3n) > .throb{
+    animation-delay: -1.5s;
+  }
