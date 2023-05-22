@@ -1,0 +1,91 @@
+body {
+    display: grid;
+    place-items: center;
+    height:100vh;
+    margin: 0;
+  }
+  
+  :root{
+    --radius: 200px;
+    --speed: 200s
+  }
+  .parent {
+    background-color: aquamarine;
+    width: 10rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    animation: Rotation var(--speed) linear 0s infinite  ;
+    
+  }
+  .parent:hover{
+    animation-play-state: paused;
+  }
+  .parent:hover p{
+    animation-play-state: paused;
+  }
+  
+  @keyframes Rotation {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  
+  .child{
+    width: 5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgb(94, 188, 188);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    
+  }
+  .child__p {
+    animation: Rotation var(--speed) linear 0s infinite reverse ;
+  
+  }
+  
+  .child:nth-child(1){
+    transform: translate(calc(var(--radius) * cos((360deg * 1)/10)), calc(var(--radius) * sin((360deg * 1)/10)));
+  }
+  
+  .child:nth-child(2){
+    transform: translate(calc(var(--radius) * cos((360deg * 2)/10)), calc(var(--radius) * sin((360deg * 2)/10)));
+  }
+  
+  .child:nth-child(3){
+    transform: translate(calc(var(--radius) * cos((360deg * 3)/10)), calc(var(--radius) * sin((360deg * 3)/10)));
+  }
+  
+  .child:nth-child(4){
+    transform: translate(calc(var(--radius) * cos((360deg * 4)/10)), calc(var(--radius) * sin((360deg * 4)/10)));
+  }
+  
+  .child:nth-child(5){
+    transform: translate(calc(var(--radius) * cos((360deg * 5)/10)), calc(var(--radius) * sin((360deg * 5)/10)));
+  }
+  
+  .child:nth-child(6){
+    transform: translate(calc(var(--radius) * cos((360deg * 6)/10)), calc(var(--radius) * sin((360deg * 6)/10)));
+  }
+  
+  .child:nth-child(7){
+    transform: translate(calc(var(--radius) * cos((360deg * 7)/10)), calc(var(--radius) * sin((360deg * 7)/10)));
+  }
+  
+  .child:nth-child(8){
+    transform: translate(calc(var(--radius) * cos((360deg * 8)/10)), calc(var(--radius) * sin((360deg * 8)/10)));
+  }
+  
+  .child:nth-child(9){
+    transform: translate(calc(var(--radius) * cos((360deg * 9)/10)), calc(var(--radius) * sin((360deg * 9)/10)));
+  }
+  
+  .child:nth-child(10){
+    transform: translate(calc(var(--radius) * cos((360deg * 10)/10)), calc(var(--radius) * sin((360deg * 10)/10)));
+  }
+  
