@@ -6,8 +6,12 @@ body {
   }
   
   :root{
-    --radius: 200px;
-    --speed: 200s
+    --radius: 50px;
+    --outer-radius: 200px;
+    --speed: 200s;
+    --first-animation-delay: 1s;
+    --first-animation-duration: 500ms;
+    --second-animation-start: calc(var(--first-animation-delay) + var(--first-animation-duration) + 1s);
   }
   .parent {
     background-color: aquamarine;
@@ -17,7 +21,8 @@ body {
     display: grid;
     place-items: center;
     position: relative;
-    animation: Rotation var(--speed) linear 3s infinite  ;
+    animation: Rotation var(--speed) linear infinite  ;
+    animation-delay: var(--second-animation-start);
     
   }
   .parent:hover{
@@ -40,53 +45,192 @@ body {
     display: grid;
     place-items: center;
     position: absolute;
-    
+      
   }
   .child__p {
-    animation: Rotation var(--speed) linear 3s infinite reverse ;
+    animation: Rotation var(--speed) linear infinite reverse ;
+    animation-delay: var(--second-animation-start);
     cursor: pointer;
   }
 
-  
+  @keyframes enter-orbit-1 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 1)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 1)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-2 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 2)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 2)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-3 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 3)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 3)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-4 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 4)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 4)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-5 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 5)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 5)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-6 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 6)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 6)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-7 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 7)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 7)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-8 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 8)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 8)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-9 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 9)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 9)/10)))
+        scale(1);
+    }
+  }
+
+  @keyframes enter-orbit-10 {
+    100%{
+        transform: translate(
+            calc(var(--outer-radius) * cos((360deg * 10)/10)), 
+            calc(var(--outer-radius) * sin((360deg * 10)/10)))
+        scale(1);
+    }
+  }
   
   .child:nth-child(1){
-    transform: translate(calc(var(--radius) * cos((360deg * 1)/10)), calc(var(--radius) * sin((360deg * 1)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 1)/10)), 
+        calc(var(--radius) * sin((360deg * 1)/10)))
+    scale(.3);
+
+    animation: enter-orbit-1 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
   }
   
   .child:nth-child(2){
-    transform: translate(calc(var(--radius) * cos((360deg * 2)/10)), calc(var(--radius) * sin((360deg * 2)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 2)/10)), 
+        calc(var(--radius) * sin((360deg * 2)/10)))
+    scale(.3);
+    animation: enter-orbit-2 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(3){
-    transform: translate(calc(var(--radius) * cos((360deg * 3)/10)), calc(var(--radius) * sin((360deg * 3)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 3)/10)), 
+        calc(var(--radius) * sin((360deg * 3)/10)))
+    scale(.3);
+    animation: enter-orbit-3 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(4){
-    transform: translate(calc(var(--radius) * cos((360deg * 4)/10)), calc(var(--radius) * sin((360deg * 4)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 4)/10)), 
+        calc(var(--radius) * sin((360deg * 4)/10)))
+    scale(.3);
+    animation: enter-orbit-4 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(5){
-    transform: translate(calc(var(--radius) * cos((360deg * 5)/10)), calc(var(--radius) * sin((360deg * 5)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 5)/10)), 
+        calc(var(--radius) * sin((360deg * 5)/10)))
+    scale(.3);
+    animation: enter-orbit-5 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(6){
-    transform: translate(calc(var(--radius) * cos((360deg * 6)/10)), calc(var(--radius) * sin((360deg * 6)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 6)/10)), 
+        calc(var(--radius) * sin((360deg * 6)/10)))
+    scale(.3);
+    animation: enter-orbit-6 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(7){
-    transform: translate(calc(var(--radius) * cos((360deg * 7)/10)), calc(var(--radius) * sin((360deg * 7)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 7)/10)), 
+        calc(var(--radius) * sin((360deg * 7)/10)))
+    scale(.3);
+    animation: enter-orbit-7 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(8){
-    transform: translate(calc(var(--radius) * cos((360deg * 8)/10)), calc(var(--radius) * sin((360deg * 8)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 8)/10)), 
+        calc(var(--radius) * sin((360deg * 8)/10)))
+    scale(.3);
+    animation: enter-orbit-8 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(9){
-    transform: translate(calc(var(--radius) * cos((360deg * 9)/10)), calc(var(--radius) * sin((360deg * 9)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 9)/10)), 
+        calc(var(--radius) * sin((360deg * 9)/10)))
+    scale(.3);
+    animation: enter-orbit-9 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
   .child:nth-child(10){
-    transform: translate(calc(var(--radius) * cos((360deg * 10)/10)), calc(var(--radius) * sin((360deg * 10)/10)));
+    transform: translate(
+        calc(var(--radius) * cos((360deg * 10)/10)),
+         calc(var(--radius) * sin((360deg * 10)/10)))
+    scale(.3);
+    animation: enter-orbit-10 var(--first-animation-duration) ease-out var(--first-animation-delay) forwards
+
   }
   
 
@@ -98,7 +242,7 @@ body {
     background-color: rgb(94, 188, 188);
     place-items: center;
     cursor: pointer;
-    animation: throb 2s linear 0s infinite alternate;
+    animation: throb 2s linear 3s infinite alternate;
   }
 
   @keyframes throb {
@@ -112,9 +256,9 @@ body {
   }
 
   .child:nth-child(2n) > .throb{
-    animation-delay: -1s;
+    animation-delay: calc(.5s + var(--second-animation-start));
   }
 
   .child:nth-child(3n) > .throb{
-    animation-delay: -1.5s;
+    animation-delay: calc(1.5s + var(--second-animation-start));
   }
